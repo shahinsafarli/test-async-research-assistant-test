@@ -30,4 +30,5 @@ RUN useradd --create-home appuser && \
 USER appuser
 
 # Offline demo as default — override for live mode or CLI usage
-CMD ["python", "demo_ai.py", "--offline"]
+CMD ["sh", "-c", "streamlit run app.py --server.port ${PORT:-8501} --server.address 0.0.0.0"]
+
